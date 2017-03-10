@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  question_text: MyString
+  date: MyString
+  user_id: 
+  forum_id: 
+
+two:
+  question_text: MyString
+  date: MyString
+  user_id: 
+  forum_id: 
