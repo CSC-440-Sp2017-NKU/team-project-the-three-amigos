@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170310170226) do
+ActiveRecord::Schema.define(version: 20170314025813) do
 
   create_table "answers", force: :cascade do |t|
     t.string   "answer_text"
@@ -49,10 +49,11 @@ ActiveRecord::Schema.define(version: 20170310170226) do
     t.string   "name"
     t.string   "email"
     t.string   "password"
-    t.string   "type"
-    t.string   "reputation"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
+    t.string   "password_digest"
+    t.string   "user_type"
+    t.integer  "reputation"
   end
 
 end
