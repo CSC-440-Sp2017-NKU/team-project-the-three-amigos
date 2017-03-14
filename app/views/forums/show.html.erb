@@ -3,6 +3,18 @@
 <p>
   <strong>Topic:</strong>
   <%= @forum.topic %>
+  <%-# Here i run through the questions that have been posted and display -%>
+  <%-# Check for forum_id to see if the question matches the given forum -%>
+  <% for @q in @questions %>
+            <div class="panel panel-default">
+                <div class="panel-body">
+                    <p><%= @q.question_text %></p>
+                </div>
+            </div>
+  <% end %>
+  
+  <%# renders the new question form, include a button that leads me to create new question %>
+  <%= render '/questions/form' %>
 </p>
 
 <%= link_to 'Edit', edit_forum_path(@forum) %> |
