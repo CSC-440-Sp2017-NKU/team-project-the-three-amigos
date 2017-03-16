@@ -3,28 +3,17 @@
     <%= link_to "NKUNet", '#', id: "logo" %>
     <nav>
       <ul class="nav navbar-nav navbar-right">
-<<<<<<< HEAD
         <li><%= link_to "Home", root_path %></li>
         <% if logged_in? %>
           <li><%= link_to "Users", users_path %></li>
-=======
-        <li><%= link_to "Home",   '#' %></li>
-        <li><%= link_to "Forums", :forums %></li>
-        <li><%= link_to "Help",   '#' %></li>
-        <% if logged_in? %>
->>>>>>> 30f3ca3066c6d9d0ca470f1b6f22bf2d217bc9f8
           <li class="dropdown">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
               Account <b class="caret"></b>
             </a>
         <ul class="dropdown-menu">
               <li><%= link_to "Profile", current_user %></li>
-<<<<<<< HEAD
-              <li><%= link_to "Settings", edit_user_path(current_user) %></li>
-=======
               <li><%= link_to "Settings", '#' %></li>
               <li><%= link_to "Courses", :courses %></li>
->>>>>>> 30f3ca3066c6d9d0ca470f1b6f22bf2d217bc9f8
               <li class="divider"></li>
               <li>
                 <%= link_to "Log out", logout_path, method: "delete" %>

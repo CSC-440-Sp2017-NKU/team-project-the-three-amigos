@@ -11,11 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-<<<<<<< HEAD
-ActiveRecord::Schema.define(version: 20170316031555) do
-=======
-ActiveRecord::Schema.define(version: 20170316084356) do
->>>>>>> 30f3ca3066c6d9d0ca470f1b6f22bf2d217bc9f8
+ActiveRecord::Schema.define(version: 20170316084020) do
 
   create_table "answers", force: :cascade do |t|
     t.string   "answer_text"
@@ -49,6 +45,9 @@ ActiveRecord::Schema.define(version: 20170316084356) do
     t.datetime "updated_at",    null: false
   end
 
+# Could not dump table "student_classes" because of following NoMethodError
+#   undefined method `[]' for nil:NilClass
+
   create_table "student_courses", force: :cascade do |t|
     t.integer  "user_id"
     t.integer  "course_id"
@@ -59,6 +58,16 @@ ActiveRecord::Schema.define(version: 20170316084356) do
   add_index "student_courses", ["course_id"], name: "index_student_courses_on_course_id"
   add_index "student_courses", ["user_id"], name: "index_student_courses_on_user_id"
 
+  create_table "students_classes", force: :cascade do |t|
+    t.integer  "user_id"
+    t.integer  "course_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "students_classes", ["course_id"], name: "index_students_classes_on_course_id"
+  add_index "students_classes", ["user_id"], name: "index_students_classes_on_user_id"
+
   create_table "users", force: :cascade do |t|
     t.string   "name"
     t.string   "email"
@@ -67,7 +76,7 @@ ActiveRecord::Schema.define(version: 20170316084356) do
     t.datetime "updated_at",      null: false
     t.string   "password_digest"
     t.string   "user_type"
-    t.string   "reputation"
+    t.integer  "reputation"
   end
 
 end
