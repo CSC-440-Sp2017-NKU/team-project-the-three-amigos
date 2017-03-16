@@ -1,4 +1,10 @@
 Rails.application.routes.draw do
+  resources :student_courses
+  resources :students_classes
+  resources :student_classes
+  resources :student_classes
+  resources :student_classes
+  resources :student_classes
   get 'sessions/new'
 
   resources :forums
