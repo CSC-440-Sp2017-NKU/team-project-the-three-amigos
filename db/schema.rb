@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170310170226) do
+ActiveRecord::Schema.define(version: 20170316084020) do
 
   create_table "answers", force: :cascade do |t|
     t.string   "answer_text"
@@ -45,14 +45,38 @@ ActiveRecord::Schema.define(version: 20170310170226) do
     t.datetime "updated_at",    null: false
   end
 
+# Could not dump table "student_classes" because of following NoMethodError
+#   undefined method `[]' for nil:NilClass
+
+  create_table "student_courses", force: :cascade do |t|
+    t.integer  "user_id"
+    t.integer  "course_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "student_courses", ["course_id"], name: "index_student_courses_on_course_id"
+  add_index "student_courses", ["user_id"], name: "index_student_courses_on_user_id"
+
+  create_table "students_classes", force: :cascade do |t|
+    t.integer  "user_id"
+    t.integer  "course_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "students_classes", ["course_id"], name: "index_students_classes_on_course_id"
+  add_index "students_classes", ["user_id"], name: "index_students_classes_on_user_id"
+
   create_table "users", force: :cascade do |t|
     t.string   "name"
     t.string   "email"
     t.string   "password"
-    t.string   "type"
-    t.string   "reputation"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
+    t.string   "password_digest"
+    t.string   "user_type"
+    t.integer  "reputation"
   end
 
 end
