@@ -15,7 +15,7 @@
                         <p>
                             <% for @a in @answers %>
                                 <% if @a.question_id.eql? @q.id %>
-                                    <div class="panel panel-default">
+                                   <div class="panel panel-default">
                                         <div class="panel-body">
                                             <p><%= @a.answer_text %></p>
                                         </div>
