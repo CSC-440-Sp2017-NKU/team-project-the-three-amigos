@@ -15,10 +15,9 @@
   <tbody>
     <% @answers.each do |answer| %>
       <tr>
-        <td><%= answer.answer_text %></td>
+        <td><%= link_to answer.answer_text, answer %></td>
         <td><%= answer.date %></td>
         <td><%= answer.user_id %></td>
-        <td><%= link_to 'Show', answer %></td>
         <td><%= link_to 'Edit', edit_answer_path(answer) %></td>
         <td><%= link_to 'Destroy', answer, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
