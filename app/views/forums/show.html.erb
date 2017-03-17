@@ -10,7 +10,21 @@
   <% for @q in @questions %>
             <div class="panel panel-default">
                 <div class="panel-body">
-                    <p><%= @q.question_text %></p>
+                    <p>
+                    <%= @q.question_text %>
+                        <p>
+                            <% for @a in @answers %>
+                                <% if @a.question_id.eql? @q.id %>
+                                    <div class="panel panel-default">
+                                        <div class="panel-body">
+                                            <p><%= @a.answer_text %></p>
+                                        </div>
+                                    </div>
+                                <% end %>
+                            <% end %>
+                        </p>
+                    <%#= link_to 'Expand', a_answer_path %>
+                    </p>
                 </div>
             </div>
   <% end %>

@@ -12,6 +12,7 @@ class ForumsController < ApplicationController
   def show
     @questions = Question.all.where("forum_id = ?", Forum.find_by_id(params[:id]).id)
     @question = Question.new
+    @answers = Answer.all#.where("question_id = ?", Answer.find_by_id(params[:id]).id)
   end
 
   # GET /forums/new
