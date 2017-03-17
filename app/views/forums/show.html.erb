@@ -17,7 +17,8 @@
                                 <% if @a.question_id.eql? @q.id %>
                                    <div class="panel panel-default">
                                         <div class="panel-body">
-                                            <p><%= @a.answer_text %></p>
+                                            <%= @a.answer_text %>
+                                            <%= link_to 'New Answer', new_answer_path, class: "pull-right" %>
                                         </div>
                                     </div>
                                 <% end %>
