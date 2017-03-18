@@ -12,7 +12,11 @@
 
 <p>
   <strong>User:</strong>
-  <%= @answer.user_id %>
+  <% if @answer.user_id %>
+    <%= User.find(@answer.user_id).name %>
+  <% else %>
+    <%= @answer.user_id %>
+  <% end %>
 </p>
 
 <%= link_to 'Edit', edit_answer_path(@answer) %> |

@@ -11,14 +11,14 @@
             <div class="panel panel-default">
                 <div class="panel-body">
                     <p>
-                    <%= @q.question_text %>
+                    <%= link_to @q.question_text, @q %>
+                    <%= link_to 'New Answer', new_answer_path, class: "pull-right" %>
                         <p>
                             <% for @a in @answers %>
                                 <% if @a.question_id.eql? @q.id %>
                                    <div class="panel panel-default">
                                         <div class="panel-body">
                                             <%= @a.answer_text %>
-                                            <%= link_to 'New Answer', new_answer_path, class: "pull-right" %>
                                         </div>
                                     </div>
                                 <% end %>

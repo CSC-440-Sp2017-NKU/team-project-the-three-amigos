@@ -12,7 +12,11 @@
 
 <p>
   <strong>User:</strong>
-  <%= @question.user_id %>
+   <% if @question.user_id %>
+    <%= User.find(@question.user_id).name %>
+  <% else %>
+    <%= @question.user_id %>
+  <% end %>
 </p>
 
 <p>

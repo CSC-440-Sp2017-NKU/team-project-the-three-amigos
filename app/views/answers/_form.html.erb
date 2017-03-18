@@ -15,14 +15,16 @@
     <%= f.label :answer_text %><br>
     <%= f.text_field :answer_text %>
   </div>
-  <div class="field">
+  <div class="field" style="display: none">
     <%= f.label :date %><br>
-    <%= f.text_field :date %>
+    <%= f.text_field :date, value: Time.now %>
   </div>
-  <div class="field">
-    <%= f.label :user_id %><br>
-    <%= f.text_field :user_id %>
-  </div>
+  <% if logged_in? %>
+    <div class="field" style="display: none">
+      <%= f.label :user_id %><br>
+      <%= f.text_field :user_id,  value: current_user.id %>
+    </div>
+  <% end %>
   <div class="field">
     <%= f.label :question_id %><br>
     <%= f.text_field :question_id %>

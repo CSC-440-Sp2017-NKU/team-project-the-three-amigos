@@ -16,8 +16,12 @@
 </p>
 
 <p>
-  <strong>User:</strong>
-  <%= @course.user_id %>
+  <strong>Professor:</strong>
+   <% if @course.user_id %>
+    <%= User.find(@course.user_id).name %>
+  <% else %>
+    <%= @course.user_id %>
+  <% end %>
 </p>
 
 <%= link_to 'Edit', edit_course_path(@course) %> |
