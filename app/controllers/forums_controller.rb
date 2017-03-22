@@ -1,5 +1,7 @@
 class ForumsController < ApplicationController
   before_action :set_forum, only: [:show, :edit, :update, :destroy]
+  # If the user isn't signed in, they can only see the index and show forum pages
+  before_filter :authenticate_user!, except: [:index, :show]
 
   # GET /forums
   # GET /forums.json
@@ -14,7 +16,8 @@ class ForumsController < ApplicationController
 
   # GET /forums/new
   def new
-    @forum = Forum.new
+    # gets the user that is logged in and adds their user id to the forum table
+    @forum = current_user.forums.build
   end
 
   # GET /forums/1/edit
@@ -24,7 +27,8 @@ class ForumsController < ApplicationController
   # POST /forums
   # POST /forums.json
   def create
-    @forum = Forum.new(forum_params)
+    # gets the user that is logged in and adds their user id to the forum that was created
+    @forum = current_user.forums.build(forum_params)
 
     respond_to do |format|
       if @forum.save
