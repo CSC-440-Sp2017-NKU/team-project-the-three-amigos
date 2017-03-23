@@ -23,6 +23,8 @@ gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0', group: :doc
 # a flexible authentication solution for Rails
 gem 'devise', '~> 4.2.0'
+# Bootstrap for styling
+gem 'bootstrap-sass', '~>3.3.7'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
