@@ -7,7 +7,7 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-	<header class="navbar navbar-default" role="navigation">
+	<header class="navbar navbar-default navbar-fixed-top">
     <div class="navbar-inner">
       <div class="container">
         <div id="logo" class="navbar-brand"><%= link_to "NKUNET", root_path %></div>
@@ -28,7 +28,6 @@
       </div>
     </div>
   </header>
-
 	<div id="main_content" class="container">
 		<% flash.each do |name, msg| %>
 			<%= content_tag(:div, msg, class: "alert alert-info") %>
@@ -39,5 +38,36 @@
 			</div>
 		</div>
 	</div>
+	<div class="container">
+  	<div class="col-sm-8 col-sm-offset-2 text-center">
+      <h2>Beautiful Bootstrap Templates</h2>
+      <hr>
+      <h4>
+        We love templates. We love Bootstrap.
+      </h4>
+      <p>Get more free templates like this at the <a href="http://bootply.com">Bootstrap Playground</a>, Bootply.</p>
+      <hr>
+      <ul class="list-inline center-block">
+        <li><a href="http://facebook.com" class="social-icons"><i class="fa-facebook"></i></a>   
+        <li><a href="http://twitter.com/bootply"><img src="/assets/example/soc_tw.png"></a></li>
+        <li><a href="http://google.com/+bootply"><img src="/assets/example/soc_gplus.png"></a></li>
+        <li><a href="http://pinterest.com/in1"><img src="/assets/example/soc_pin.png"></a></li>
+      </ul>
+      
+  	</div><!--/col-->
+</div><!--/container-->
+  
+</div><!--/wrap-->
+
+<div id="footer">
+  <div class="container">
+    <p class="text-muted">This Bootstrap Example courtesy <a href="http://www.bootply.com">Bootply.com</a></p>
+  </div>
+</div>
+
+<ul class="nav pull-right scroll-top">
+  <li><a href="#" title="Scroll to top"><i class="glyphicon glyphicon-chevron-up"></i></a></li>
+</ul>
+
 </body>
 </html>

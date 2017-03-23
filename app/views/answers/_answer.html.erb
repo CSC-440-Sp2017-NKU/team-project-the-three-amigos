@@ -1,0 +1,27 @@
+<%= div_for(answer) do %>
+	<div class="link row clearfix">
+		<div class="row">
+			<div class="col-md-6">
+				<p class="lead"><%= answer.body %><br></p>
+				<p><small>Submitted <strong><%= time_ago_in_words(answer.created_at) %> ago</strong> by <%= answer.user.name %></small></p>
+			</div>
+	
+			<div class="btn-group col-md-6">
+				<% if answer.user == current_user -%>
+				    <%= link_to 'Edit', edit_answer_path(answer), class: "btn btn-sm btn-default" %>
+					<%= link_to 'Destroy', answer, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-sm btn-default" %>
+				<% end %>
+				<%= link_to like_answer_path(answer), method: :put, class: "btn btn-default btn-sm" do %>
+			      <span class="glyphicon glyphicon-chevron-up"></span>
+			      Upvote
+			      <%= answer.get_upvotes.size %>
+			    <% end %>
+			    <%= link_to dislike_answer_path(answer), method: :put, class: "btn btn-default btn-sm" do %>
+			      <span class="glyphicon glyphicon-chevron-down">
+			      Downvote
+			      <%= answer.get_downvotes.size %>
+			    <% end %>
+			</div>
+		</div>
+	</div>
+<% end %>

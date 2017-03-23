@@ -4,7 +4,6 @@
 			<p class="lead"><%= link_to question.body, question %><br></p>
 			<p><small>Submitted <strong><%= time_ago_in_words(question.created_at) %> ago</strong> by <%= question.user.name %></small></p>
 		</div>
-
 		<div class="btn-group pull-right">
 			<% if question.user == current_user -%>
 			    <%= link_to 'Edit', edit_question_path(question), class: "btn btn-sm btn-default" %>

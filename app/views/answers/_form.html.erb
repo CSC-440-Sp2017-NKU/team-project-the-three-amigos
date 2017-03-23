@@ -1,10 +1,10 @@
-<%= form_for(@question) do |f| %>
-  <% if @question.errors.any? %>
+<%= form_for(@answer) do |f| %>
+  <% if @answer.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(@question.errors.count, "error") %> prohibited this question from being saved:</h2>
+      <h2><%= pluralize(@answer.errors.count, "error") %> prohibited this question from being saved:</h2>
 
       <ul>
-      <% @question.errors.full_messages.each do |message| %>
+      <% @answer.errors.full_messages.each do |message| %>
         <li><%= message %></li>
       <% end %>
       </ul>
@@ -12,7 +12,7 @@
   <% end %>
 
   <div class="form-group">
-    <%= f.label :body, :placeholder => "Enter question" %><br>
+    <%= f.label :body, :placeholder => "Enter answer" %><br>
     <%= f.text_area :body, class: "form-control" %>
   </div>
   <div class="form-group">
