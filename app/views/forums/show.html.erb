@@ -1,5 +1,5 @@
 <div class="page-header">
-    <h1><%= @forum.topic %></h1><br>
+    <h1><%= @forum.topic %></h1>
 </div>
 
 <% if @forum.user == current_user -%>
@@ -17,9 +17,13 @@
   <%= render :partial => @forum.questions %>
 </div>
 <%= simple_form_for [@forum, Question.new]  do |f| %>
-  <div class="field">
-    <%= f.text_area :body, class: "form-control" %>
-  </div>
-  <br>
-  <%= f.submit "Add Question", class: "btn btn-primary" %>
+  
+    <div class="field">
+      <%= f.text_area :body, :placeholder => "Enter question", class: "form-control" %>
+    </div>
+    <br>
+    <%= f.submit "Add Question", class: "btn btn-primary" %>
+    <% until :body.present? %>
+    <% Nope %>
+    <% end %>  
 <% end %>

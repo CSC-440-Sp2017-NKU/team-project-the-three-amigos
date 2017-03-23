@@ -2,7 +2,7 @@
 	<div class="link row clearfix">
 		<div class="pull-left">
 			<p class="lead"><%= question.body %></p>
-			<p><small>Submitted <strong><%= time_ago_in_words(question.created_at) %> ago</strong> by <%= question.user.email %></small></p>
+			<p><small>Submitted <strong><%= time_ago_in_words(question.created_at) %> ago</strong> by <%= question.user.name %></small></p>
 		</div>
 
 		<div class="btn-group pull-right">

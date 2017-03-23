@@ -2,7 +2,7 @@
   <div class="link row clearfix">
     <h2>
       <%= link_to forum.topic, forum %><br>
-      <small class="author">Submitted <%= time_ago_in_words(forum.created_at) %> by <%= forum.user.email %></small>
+      <small class="author">Submitted <%= time_ago_in_words(forum.created_at) %> by <%= forum.user.name %></small>
     </h2>
   </div>
 <% end %>  

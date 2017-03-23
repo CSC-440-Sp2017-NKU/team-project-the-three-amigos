@@ -33,7 +33,7 @@ class QuestionsController < ApplicationController
         format.html { redirect_to @forum, notice: 'Question was successfully created.' }
         format.json { render json: @question, status: :created, location: @question }
       else
-        format.html { render action: "new" }
+        format.html { redirect_to @forum, notice: 'Question cannot be blank.' }
         format.json { render json: @question.errors, status: :unprocessable_entity }
       end
     end
