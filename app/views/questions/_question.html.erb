@@ -1,7 +1,7 @@
 <%= div_for(question) do %>
 	<div class="link row clearfix">
 		<div class="pull-left">
-			<p class="lead"><%= question.body %></p>
+			<p class="lead"><%= link_to question.body, question %><br></p>
 			<p><small>Submitted <strong><%= time_ago_in_words(question.created_at) %> ago</strong> by <%= question.user.name %></small></p>
 		</div>
 
