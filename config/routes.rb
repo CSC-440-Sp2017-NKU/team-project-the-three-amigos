@@ -1,6 +1,9 @@
 Rails.application.routes.draw do
+  resources :questions
   devise_for :users
-  resources :forums
+  resources :forums do
+    resources :questions  # add question routes
+  end
   
   # Defined root_url is the forum controller
   root to: "forums#index"

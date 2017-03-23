@@ -8,3 +8,18 @@
 		<%= link_to 'Destroy', @forum, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-default" %>
 	</div>
 <% end %>
+
+<h3 class="questions_title">
+  <%= @forum.questions.count %> Questions
+</h3>
+
+<div id="questions">
+  <%= render :partial => @forum.questions %>
+</div>
+<%= simple_form_for [@forum, Question.new]  do |f| %>
+  <div class="field">
+    <%= f.text_area :body, class: "form-control" %>
+  </div>
+  <br>
+  <%= f.submit "Add Question", class: "btn btn-primary" %>
+<% end %>
