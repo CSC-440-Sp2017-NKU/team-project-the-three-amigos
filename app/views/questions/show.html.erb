@@ -2,7 +2,7 @@
     <h1><%= @question.body %></h1>
 </div>
 
-<% if @question.user == current_user -%>
+<% if @question.user == current_user || current_user.administrator? -%>
 	<div class="btn-group">
 		<%= link_to 'Edit', edit_question_path(@question), class: "btn btn-default" %>
 		<%= link_to 'Destroy', @question, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-default" %>

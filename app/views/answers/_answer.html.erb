@@ -6,10 +6,12 @@
 				<p><small>Submitted <strong><%= time_ago_in_words(answer.created_at) %> ago</strong> by <%= answer.user.name %></small></p>
 			</div>
 	
-			<div class="btn-group col-md-6">
+			<div class="pull-right">
 				<% if answer.user == current_user -%>
 				    <%= link_to 'Edit', edit_answer_path(answer), class: "btn btn-sm btn-default" %>
-					<%= link_to 'Destroy', answer, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-sm btn-default" %>
+				    <% if current_user.administrator? %>
+						<%= link_to 'Destroy', answer, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-sm btn-default" %>
+					<% end %>
 				<% end %>
 				<%= link_to like_answer_path(answer), method: :put, class: "btn btn-default btn-sm" do %>
 			      <span class="glyphicon glyphicon-chevron-up"></span>

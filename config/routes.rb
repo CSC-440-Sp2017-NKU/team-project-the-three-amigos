@@ -8,10 +8,11 @@ Rails.application.routes.draw do
   resources :questions do
     resources :answers
   end
-  devise_for :users
   resources :forums do
     resources :questions  # add question routes
   end
+  
+  devise_for :users, :controllers => { :registrations => 'registrations'}
   
   # Defined root_url is the forum controller
   root to: "forums#index"

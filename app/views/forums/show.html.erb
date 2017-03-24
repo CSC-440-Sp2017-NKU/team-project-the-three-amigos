@@ -2,7 +2,7 @@
     <h1><%= @forum.topic %></h1>
 </div>
 
-<% if @forum.user == current_user -%>
+<% if @forum.user == current_user || current_user.administrator? -%>
 	<div class="btn-group">
 		<%= link_to 'Edit', edit_forum_path(@forum), class: "btn btn-default" %>
 		<%= link_to 'Destroy', @forum, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-default" %>
@@ -24,3 +24,6 @@
     <br>
     <%= f.submit "Add Question", class: "btn btn-primary" %>
 <% end %>
+<br>
+
+<%= link_to 'Back', forums_path %>
