@@ -2,27 +2,27 @@
     <h1><%= @forum.topic %></h1>
 </div>
 
-<% if @forum.user == current_user || current_user.administrator? -%>
+<% if @forum.user == current_user || current_user.try(:administrator?) -%>
 	<div class="btn-group">
 		<%= link_to 'Edit', edit_forum_path(@forum), class: "btn btn-default" %>
 		<%= link_to 'Destroy', @forum, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-default" %>
 	</div>
-<% end %>
-
-<h3 class="questions_title">
-  <%= @forum.questions.count %> Questions
-</h3>
-
-<div id="questions">
-  <%= render :partial => @forum.questions %>
-</div>
-<br>
-<%= simple_form_for [@forum, Question.new]  do |f| %>
-    <div class="field">
-      <%= f.text_area :body, :placeholder => "Enter question", class: "form-control" %>
-    </div>
-    <br>
-    <%= f.submit "Add Question", class: "btn btn-primary" %>
+<% else %>
+  <h3 class="questions_title">
+    <%= @forum.questions.count %> Questions
+  </h3>
+  
+  <div id="questions">
+    <%= render :partial => @forum.questions %>
+  </div>
+  <br>
+  <%= simple_form_for [@forum, Question.new]  do |f| %>
+      <div class="field">
+        <%= f.text_area :body, :placeholder => "Enter question", class: "form-control" %>
+      </div>
+      <br>
+      <%= f.submit "Add Question", class: "btn btn-primary" %>
+  <% end %>
 <% end %>
 <br>
 
