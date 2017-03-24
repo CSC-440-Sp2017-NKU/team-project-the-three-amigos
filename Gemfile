@@ -29,6 +29,8 @@ gem 'bootstrap-sass', '~>3.3.7'
 gem 'acts_as_votable', '~> 0.10.0'
 # Used for questions and answers
 gem 'simple_form', '~> 3.4'
+# Social media images
+gem 'font-awesome-sass', '~> 4.7.0'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'

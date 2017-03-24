@@ -16,6 +16,8 @@
 
 @import "bootstrap-sprockets";
 @import "bootstrap";
+@import "font-awesome-sprockets";
+@import "font-awesome";
 
 #logo {
 	font-size: 26px;
@@ -44,7 +46,7 @@
 			}
 		}
 	}
-	.comments_title {
+	.questions_title {
 		margin-top: 2em;
 	}
 	#comments {
