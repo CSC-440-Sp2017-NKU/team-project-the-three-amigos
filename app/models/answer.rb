@@ -3,4 +3,8 @@ class Answer < ActiveRecord::Base
   acts_as_votable
   belongs_to :user
   belongs_to :question
+  
+  default_scope {
+    order(cached_votes_up: :desc)
+  }
 end
