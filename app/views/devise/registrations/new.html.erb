@@ -22,11 +22,11 @@
 	  	<%= f.label :password_confirmation %>
 	  	<%= f.password_field :password_confirmation, :placeholder => "Confirm password", class: "form-control", required: true %>
 	  </div>
-	  
-	  <div class="form-group">
-	  <label class="radio-inline"><input type="radio" name="optradio">Administrator</label>
-		<label class="radio-inline"><input type="radio" name="optradio">Faculty</label>	
-	  </div>
+		
+		<div class="form-group">
+		<div><%= f.check_box :administrator, {}, true %> <%= f.label :administrator, "Administrator" %> </div>
+    <div><%= f.check_box :faculty, {}, true %> <%= f.label :faculty, "Faculty" %> </div>
+		</div>
 
 	  <div class="form-group">
 	  	<%= f.submit "Add user", class: "btn btn-lg btn-primary" %>

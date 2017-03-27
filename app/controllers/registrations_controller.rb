@@ -5,7 +5,7 @@ class RegistrationsController < Devise::RegistrationsController
 
   private
   def redirect_unless_admin
-    unless current_user.administrator
+    unless current_user.administrator?
       flash[:error] = "Only admins can do that"
       redirect_to root_path
     end
@@ -14,4 +14,5 @@ class RegistrationsController < Devise::RegistrationsController
   def sign_up(resource_name, resource)
     true
   end
+  
 end

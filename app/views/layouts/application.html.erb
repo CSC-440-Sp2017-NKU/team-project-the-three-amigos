@@ -14,16 +14,25 @@
         <nav class="collapse navbar-collapse navbar-ex1-collapse">
         	<% if user_signed_in? -%>
 						<ul class="nav navbar-nav navbar-right">
+						  <li class="active"><%= link_to "Home", root_path %></li>
 							<li><%= link_to 'Submit forum', new_forum_path %></li>
 							<% if current_user.administrator? -%>
-							<li><%= link_to 'Add user', new_user_registration_path %></li>
-							<li><%= link_to 'Account', edit_user_registration_path %></li>
+							
+              <li class="dropdown">
+                <a class="dropdown-toggle" data-toggle="dropdown" href="#">Admin
+                <span class="caret"></span></a>
+                <ul class="dropdown-menu">
+                  <li><%= link_to 'Add user', new_user_registration_path %></li>
+                  <li><a href="#">Add Course placeholder</a></li>
+                  <li><%= link_to 'Account', edit_user_registration_path %></li>
+                </ul>
+              </li>
 							<% end %>
 							<li><%= link_to 'Sign out', destroy_user_session_path, :method => :delete %></li>
 						</ul>
 					<% else -%>
-						<ul class="nav navbar-nav pull-right">
-							<li><%= link_to 'Sign in', new_user_session_path %></li>
+						<ul class="nav navbar-nav navbar-right">
+						  <li><%= link_to 'Sign in', new_user_session_path %></li>
 						</ul>
 					<% end -%>
         </nav>

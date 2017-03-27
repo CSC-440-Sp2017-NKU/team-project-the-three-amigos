@@ -1,7 +1,7 @@
 class ForumsController < ApplicationController
   before_action :set_forum, only: [:show, :edit, :update, :destroy]
   # If the user isn't signed in, they can only see the index and show forum pages
-  before_filter :authenticate_user!, except: [:index, :show]
+  before_filter :authenticate_user!, except: [:index]
 
   # GET /forums
   # GET /forums.json
