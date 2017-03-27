@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170324005748) do
+ActiveRecord::Schema.define(version: 20170327163331) do
 
   create_table "answers", force: :cascade do |t|
     t.integer  "question_id"
@@ -60,6 +60,7 @@ ActiveRecord::Schema.define(version: 20170324005748) do
     t.string   "name"
     t.boolean  "administrator",          default: false
     t.boolean  "faculty",                default: false
+    t.integer  "reputation",             default: 0
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true
