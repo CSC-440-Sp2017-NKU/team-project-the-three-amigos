@@ -4,6 +4,7 @@ class Answer < ActiveRecord::Base
   belongs_to :user
   belongs_to :question
   
+  # Order answers by votes
   default_scope {
     order(cached_votes_up: :desc)
   }

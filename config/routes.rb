@@ -13,6 +13,7 @@ Rails.application.routes.draw do
   end
   
   devise_for :users, :controllers => { :registrations => 'registrations'}
+  resources :users, only: [:show, :index]
   
   # Defined root_url is the forum controller
   root to: "forums#index"
