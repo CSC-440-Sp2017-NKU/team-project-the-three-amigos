@@ -13,6 +13,7 @@ Rails.application.routes.draw do
   end
   
   devise_for :users, :controllers => { :registrations => 'registrations'}
+  match 'users/:id' => 'users#destroy', :via => :delete, :as => :admin_destroy_user
   resources :users, only: [:show, :index]
   
   # Defined root_url is the forum controller

@@ -29,7 +29,6 @@
 		color: #2F363E;
 	}
 }
-
 #main_content {
 	#content {
 		float: none;
@@ -49,8 +48,8 @@
 	.questions_title {
 		margin-top: 2em;
 	}
-	#comments {
-		.comment {
+	#questions {
+		.question {
 			padding: 1em 0;
 			border-top: 1px solid #E9E9E9;
 			.lead {
@@ -58,4 +57,20 @@
 			}
 		}
 	}
+}
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+body {
+  /* Margin bottom by footer height */
+  margin-bottom: 60px;
+}
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  /* Set the fixed height of the footer here */
+  height: 60px;
 }
