@@ -12,9 +12,9 @@ Rails.application.routes.draw do
     resources :questions  # add question routes
   end
   
-  devise_for :users, :controllers => { :registrations => 'registrations'}
+  devise_for :users, :path_prefix => 'my', :controllers => { :registrations => 'registrations'}
   match 'users/:id' => 'users#destroy', :via => :delete, :as => :admin_destroy_user
-  resources :users, only: [:show, :index]
+  resources :users, only: [:show, :index, :edit, :update]
   
   # Defined root_url is the forum controller
   root to: "forums#index"

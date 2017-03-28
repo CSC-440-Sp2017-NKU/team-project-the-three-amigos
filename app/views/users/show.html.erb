@@ -50,12 +50,12 @@
                     </div>
                 <div class="panel-footer clearfix">
                     <span class="pull-right">
-                        <%= link_to edit_user_registration_path, class: "btn btn-sm btn-warning" do %>
+                        <%= link_to edit_user_path(@user), class: "btn btn-sm btn-warning" do %>
                             <i class="glyphicon glyphicon-edit"></i> Edit account
                         <% end %>
-                        <%= link_to edit_user_registration_path, class: "btn btn-sm btn-danger" do %>
+                        <%= link_to admin_destroy_user_path(@user), class: "btn btn-sm btn-danger", method: :delete, data: { confirm: "Are you sure?" } do %>
                             <i class="glyphicon glyphicon-remove"></i> Destroy account
-                        <% end %>
+                        <% end %>    
                     </span>
                 </div>
             </div>

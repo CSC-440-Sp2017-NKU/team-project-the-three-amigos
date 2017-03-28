@@ -1,0 +1,34 @@
+<h2>Edit</h2>
+
+<%= form_for(@user) do |f| %>
+
+  <div class="panel panel-default">
+    <div class="panel-body">
+      <div class="form-inputs">
+        <div class="form-group">
+          <%= f.label :name %>
+          <%= f.text_field :name, class: "form-control", :autofocus => true %>
+        </div>
+  
+        <div class="form-group">
+          <%= f.label :email %>
+          <%= f.email_field :email, class: "form-control", :autofocus => true %>
+        </div>
+        
+    	<div class="form-group">
+      		<div><%= f.check_box :administrator, {}, true %> <%= f.label :administrator, "Administrator" %> </div>
+            <div><%= f.check_box :faculty, {}, true %> <%= f.label :faculty, "Faculty" %> </div>
+    	</div>
+      </div>
+
+      <div class="form-group">
+        <%= f.submit "Update", class: "btn btn-primary" %>
+      </div>
+
+    <% end %>
+  </div>
+  <div class="panel-footer">
+    <%= link_to admin_destroy_user_path(@user), class: "btn btn-sm btn-danger", method: :delete, data: { confirm: "Are you sure?" } do %>
+        <i class="glyphicon glyphicon-remove"></i> Destroy account
+    <% end %>  
+  </div>
