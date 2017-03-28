@@ -29,6 +29,7 @@
 		color: #2F363E;
 	}
 }
+
 #main_content {
 	#content {
 		float: none;
@@ -48,8 +49,8 @@
 	.questions_title {
 		margin-top: 2em;
 	}
-	#questions {
-		.question {
+	#comments {
+		.comment {
 			padding: 1em 0;
 			border-top: 1px solid #E9E9E9;
 			.lead {
@@ -58,7 +59,6 @@
 		}
 	}
 }
-
 html {
   position: relative;
   min-height: 100%;
