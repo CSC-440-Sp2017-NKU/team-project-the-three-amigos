@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170327195804) do
+ActiveRecord::Schema.define(version: 20170329233630) do
 
   create_table "answers", force: :cascade do |t|
     t.integer  "question_id"
@@ -31,6 +31,17 @@ ActiveRecord::Schema.define(version: 20170327195804) do
   add_index "answers", ["cached_votes_up"], name: "index_answers_on_cached_votes_up"
   add_index "answers", ["question_id"], name: "index_answers_on_question_id"
   add_index "answers", ["user_id"], name: "index_answers_on_user_id"
+
+  create_table "courses", force: :cascade do |t|
+    t.string   "name"
+    t.datetime "time"
+    t.string   "section"
+    t.integer  "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "courses", ["user_id"], name: "index_courses_on_user_id"
 
   create_table "forums", force: :cascade do |t|
     t.string   "topic"

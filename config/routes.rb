@@ -1,4 +1,9 @@
 Rails.application.routes.draw do
+  resources :courses do
+    collection {post :import}
+  end
+  
+
   resources :answers do
     member do
       put "like",    to: "answers#upvote"
@@ -18,6 +23,7 @@ Rails.application.routes.draw do
   
   # Defined root_url is the forum controller
   root to: "forums#index"
+  
   
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

@@ -8,6 +8,7 @@ class User < ActiveRecord::Base
   # Association link between users and forums       
   has_many :forums
   has_many :answers
+  has_many :courses
   
   def increase_reputation(count=1)
     update_attribute(:reputation, reputation + count)
