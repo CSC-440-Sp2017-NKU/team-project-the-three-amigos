@@ -8,6 +8,11 @@ class UsersController < ApplicationController
         @users = User.all 
     end
     
+    def import
+        User.import(params[:file])
+        redirect_to :back, notice: "Users were successfully imported"
+    end
+    
     def destroy
         @user = User.find(params[:id])
         @user.destroy

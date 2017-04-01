@@ -1,4 +1,5 @@
 class User < ActiveRecord::Base
+  require 'csv'
   acts_as_voter
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
@@ -16,5 +17,11 @@ class User < ActiveRecord::Base
   
   def decrease_reputation(count=1)
     update_attribute(:reputation, reputation - count)
+  end
+  
+  def self.import(file)
+    CSV.foreach(file.path, headers: true) do |row|
+      User.create! row.to_hash
+    end
   end
 end

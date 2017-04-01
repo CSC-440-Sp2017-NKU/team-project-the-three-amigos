@@ -60,3 +60,11 @@
             </div>
         </div>
     </div>
+    
+    <%= link_to 'Add a User', new_user_registration_path %>
+    <br>
+    <h5>Import Users</h5>
+        <%= form_tag import_users_path, multipart: true do %>
+            <%= file_field_tag :file %>
+            <%= submit_tag "Import CSV" %>
+        <% end %>

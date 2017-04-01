@@ -3,6 +3,9 @@ Rails.application.routes.draw do
     collection {post :import}
   end
   
+  resources :users do
+    collection {post :import}
+  end
 
   resources :answers do
     member do
