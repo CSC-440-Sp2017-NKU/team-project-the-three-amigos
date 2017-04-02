@@ -51,6 +51,6 @@
 <br>
 <h5>Import Courses</h5>
 <%= form_tag import_courses_path, multipart: true do %>
-    <%= file_field_tag :file %>
+    <%= file_field_tag :file %> <br>
     <%= submit_tag("Import CSV") %>
 <% end %>

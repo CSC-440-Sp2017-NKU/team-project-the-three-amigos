@@ -5,12 +5,11 @@
 <% if @question.user == current_user || current_user.try(:administrator?) -%>
 	<div class="btn-group">
 		<%= link_to edit_question_path(@question), class: "btn btn-default", title: "Edit question" do %>
-                            <i class="glyphicon glyphicon-edit"></i>
+      <i class="glyphicon glyphicon-edit"></i>
     <% end %>
     <%= link_to @question, class: "btn btn-default", title: "Delete question", method: :delete, data: { confirm: "Are you sure you want to delete this question?" } do %>
-                            <i class="glyphicon glyphicon-trash"></i>
+      <i class="glyphicon glyphicon-trash"></i>
     <% end %> 
-		
 	</div>
 <% end %>
 
