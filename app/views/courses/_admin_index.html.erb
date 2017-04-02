@@ -1,7 +1,4 @@
-<% if current_user.administrator? -%>
-  <%= render 'admin_index' %>
-<% else %>
-  <div class="makeCenter">
+<div class="makeCenter">
     <div class="container">
         <div class="row">
             <div class="col-lg-12">
@@ -21,7 +18,11 @@
                                 <% @courses.includes(:user).each do |course| %>
                                     <tbody>
                                         <tr>
-                                            <td><%= course.name %></td>
+                                            <td>
+                                                <div class="course-link">
+                                                    <%= link_to course.name, course_path(course) %>
+                                                </div>
+                                            </td>
                                             <td><%= course.section %></td>
                                             <td><%= course.time %></td>
                                             <% if course.user_id %>
@@ -42,5 +43,14 @@
             </div>
         </div>
     </div>
-  </div>
+</div>
+
+<br>
+
+<%= link_to "Add Course", new_course_path, title: "Add a single course", class: "btn btn-custom" %>
+<br>
+<h5>Import Courses</h5>
+<%= form_tag import_courses_path, multipart: true do %>
+    <%= file_field_tag :file %>
+    <%= submit_tag("Import CSV") %>
 <% end %>

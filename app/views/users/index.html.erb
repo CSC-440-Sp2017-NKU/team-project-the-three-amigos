@@ -1,70 +1,58 @@
-    <div class="row">
-        <div class="col-lg-12">
-            <div class="main-box no-header clearfix">
-                <div class="main-box-body clearfix">
-                    <div class="table-responsive">
-                        <table class="table user-list">
-                            <thead>
-                                <tr>
-                                <th><span>User</span></th>
-                                <th><span>Created</span></th>
-                                <th><span>Reputation</span></th>
-                                <th><span>Email</span></th>
-                                <th>&nbsp;</th>
-                                </tr>
-                            </thead>
-                            <% @users.each do |user| %>
-                                <tbody>
-                                    <tr>
-                                        <td>
-                                            <img src="/NKU_CMYK_D.gif" alt="">
-                                            <div class="user-link">
-                                                <%= link_to user.name, user_path(user) %>
-                                            </div>
-                                            <span class="user-subhead">
-                                                <% if user.administrator? %>
-                                                    Administrator
-                                                <% elsif user.faculty? %>
-                                                    Faculty
-                                                <% else %>
-                                                    Student
-                                                <% end %> 
-                                            </span>
-                                        </td>
-                                        <td><%= user.created_at %></td>
-                                        <td><%= user.reputation %></td>
-                                        <td><%= user.email %></td>
-                                        <td>
-                                            <div class="btn btn-sm btn-warning" data-toggle="tooltip" title="edit user">
-                                                <%= link_to edit_user_path(user) do %>
-                                				    <i class="glyphicon glyphicon-edit"></i>
-                                			    <% end %>
-                                            </div>
-                                            <div class="btn btn-sm btn-danger" data-toggle="tooltip" title="delete user">
-                                    			<%= link_to admin_destroy_user_path(user), method: :delete, data: { confirm: "Are you sure?" } do %>
-                                    				<i class="glyphicon glyphicon-remove"></i>
-                                    			<% end %>
-                                			</div>
-                                    	</td>
-                                	</tr>
-                                	<script>
-                                        $(document).ready(function(){
-                                            $('[data-toggle="tooltip"]').tooltip(); 
-                                        });
-                                    </script>
-                                </tbody>
-                            <% end %>
-                        </table>
+<div class="makeCenter">
+    <div class="container">
+        <% if current_user.administrator? -%>
+            <%= render 'admin_index' %>
+        <% else %>
+                <div class="row">
+                <div class="col-lg-12">
+                    <div class="main-box no-header clearfix">
+                        <div class="main-box-body clearfix">
+                            <div class="table-responsive">
+                                <table class="table user-list">
+                                    <thead>
+                                        <tr>
+                                        <th><span>User</span></th>
+                                        <th><span>Reputation</span></th>
+                                        <th><span>Email</span></th>
+                                        <th>&nbsp;</th>
+                                        </tr>
+                                    </thead>
+                                    <% @users.each do |user| %>
+                                        <% if not user.administrator %>
+                                            <tbody>
+                                                <tr>
+                                                    <td>
+                                                        <img src="/NKU_CMYK_D.gif" alt="">
+                                                        <div class="user-link">
+                                                            <%= link_to user.name, user_path(user) %>
+                                                        </div>
+                                                        <span class="user-subhead">
+                                                            <% if user.administrator? %>
+                                                                Administrator
+                                                            <% elsif user.faculty? %>
+                                                                Faculty
+                                                            <% else %>
+                                                                Student
+                                                            <% end %> 
+                                                        </span>
+                                                    </td>
+                                                    <td><%= user.reputation %></td>
+                                                    <td><%= user.email %></td>
+                                            	</tr>
+                                            	<script>
+                                                    $(document).ready(function(){
+                                                        $('[data-toggle="tooltip"]').tooltip(); 
+                                                    });
+                                                </script>
+                                            </tbody>
+                                        <% end %>
+                                    <% end %>
+                                </table>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </div>
-    
-    <%= link_to 'Add a User', new_user_registration_path %>
-    <br>
-    <h5>Import Users</h5>
-        <%= form_tag import_users_path, multipart: true do %>
-            <%= file_field_tag :file %>
-            <%= submit_tag "Import CSV" %>
         <% end %>
+    </div>
+</div>

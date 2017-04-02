@@ -1,3 +1,6 @@
+<%= link_to new_forum_path, {:class=> "btn btn-custom", :style=> "float:right; margin-top:20px;"} do %>
+    <i class="glyphicon glyphicon-plus"></i> New Forum
+<% end %> 
 <% @forums.each do |forum| %>
   <div class="link row clearfix">
     <h2>

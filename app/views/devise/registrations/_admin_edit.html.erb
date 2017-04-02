@@ -1,9 +1,6 @@
-<% if current_user.administrator? %>
-  <%= render 'admin_edit' %>
-<% else %>
-  <h2>Edit <%= resource_name.to_s.humanize %></h2>
+<h2>Edit <%= resource_name.to_s.humanize %></h2>
 
-  <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
+<%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
   <%= devise_error_messages! %>
 
   <div class="panel panel-default">
@@ -11,12 +8,12 @@
       <div class="form-inputs">
         <div class="form-group">
           <%= f.label :name %>
-          <%= f.text_field :name, class: "form-control", :autofocus => true, :readonly => true %>
+          <%= f.text_field :name, class: "form-control", :autofocus => true %>
         </div>
   
         <div class="form-group">
           <%= f.label :email %>
-          <%= f.email_field :email, class: "form-control", :autofocus => true, :readonly => true %>
+          <%= f.email_field :email, class: "form-control", :autofocus => true %>
         </div>
   
         <div class="form-group">
@@ -29,7 +26,7 @@
           <%= f.password_field :current_password, :placeholder => "Enter password", class: "form-control" %>
         </div>
         
-    		<div style="display:none;">
+    		<div class="form-group">
       		<div><%= f.check_box :administrator, {}, true %> <%= f.label :administrator, "Administrator" %> </div>
           <div><%= f.check_box :faculty, {}, true %> <%= f.label :faculty, "Faculty" %> </div>
     		</div>
@@ -41,4 +38,8 @@
 
     <% end %>
   </div>
-<% end %>
+  <div class="panel-footer">
+    
+    <p><%= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete, class: "btn btn-default" %></p>
+
+  </div>

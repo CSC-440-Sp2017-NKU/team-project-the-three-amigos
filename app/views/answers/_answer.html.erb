@@ -8,9 +8,13 @@
 	
 			<div class="pull-right">
 				<% if answer.user == current_user -%>
-				    <%= link_to 'Edit', edit_answer_path(answer), class: "btn btn-sm btn-default" %>
+				    <%= link_to edit_answer_path(answer), class: "btn btn-default", title: "Edit answer" do %>
+                            <i class="glyphicon glyphicon-edit"></i>
+                    <% end %>
 				    <% if current_user.try(:administrator?) %>
-						<%= link_to 'Destroy', answer, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-sm btn-default" %>
+    					<%= link_to answer, class: "btn btn-default", title: "Delete answer", method: :delete, data: { confirm: "Are you sure you want to delete this answer?" } do %>
+                            <i class="glyphicon glyphicon-trash"></i>
+     					<% end %> 
 					<% end %>
 				<% end %>
 				<%= link_to like_answer_path(answer), method: :put, class: "btn btn-default btn-sm" do %>
