@@ -11,6 +11,8 @@
 // about supported directives.
 //
 //= require jquery
+//= require moment
+//= require bootstrap-datetimepicker
 //= require bootstrap-sprockets
 //= require jquery.easing
 //= require jquery_ujs

@@ -35,6 +35,9 @@ gem 'simple_form', '~> 3.4'
 # Social media images
 gem 'font-awesome-sass', '~> 4.7.0'
 gem 'font-awesome-rails'
+# Date picker for courses
+gem 'momentjs-rails', '>= 2.9.0'
+gem 'bootstrap3-datetimepicker-rails', '~> 4.17.47'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
