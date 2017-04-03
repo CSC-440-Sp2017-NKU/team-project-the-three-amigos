@@ -1,32 +1,24 @@
-<%= simple_form_for(@course) do |f| %>
-  <%= f.error_notification %>
+<%= form_for(@course) do |f| %>
 
   <div class="form-group">
     <%= f.label :name %>
     <%= f.text_field :name, :placeholder => "Enter name", autofocus: true, class: "form-control" %>
   </div>
   
-  <div class="container">
-    <div class="row">
-        <div class='col-sm-6'>
-            <div class="form-group">
-                <div class='input-group date' id='datetimepicker1'>
-                    <%= f.text_field :time, hide_label: true, class: 'datetimepicker1' %>
-                    <input type='text' class="form-control" />
-                    <span class="input-group-addon">
-                        <span class="glyphicon glyphicon-calendar"></span>
-                    </span>
-                </div>
-            </div>
-        </div>
-        <script type="text/javascript" >
-            $(function () {
-                $('#datetimepicker1').datetimepicker();
-            });
-        </script>
+    <div class="form-group">
+      <%= label_tag :time, 'DateTime' %>
+      <div class="input-group date" id="datetimepicker1">
+        <input type="hidden" data-provide='datepicker' >
+        <%= f.text_field :time, placeholder: 'Date', class: 'form-control'%>
+        <span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span></span>
+      </div>
     </div>
-</div>
-  
+  <script type="text/javascript" >
+      $(function () {
+          $('#datetimepicker1').datetimepicker();
+      });
+  </script>
+
   <div class="form-group">
     <%= f.label :section %>
     <%= f.text_field :section, :placeholder => "Enter section number", class: "form-control" %>
