@@ -23,7 +23,7 @@
 <br>
 <%= simple_form_for [@question, Answer.new]  do |f| %>
     <div class="field">
-      <%= f.text_area :body, :placeholder => "Enter answer", class: "form-control" %>
+      <%= f.text_area :body, :placeholder => "Enter answer", autofocus: true,  class: "form-control" %>
     </div>
     <br>
     <%= f.submit "Add Answer", class: "btn btn-custom" %>
