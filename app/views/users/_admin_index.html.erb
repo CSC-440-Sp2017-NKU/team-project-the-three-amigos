@@ -60,11 +60,12 @@
             </div>
         </div>
     </div>
-    
-    <%= link_to "Add User", new_user_registration_path, title: "Create a single user", class: "btn btn-custom" %>
-    <br>
-    <h5>Import Users</h5>
-        <%= form_tag import_users_path, multipart: true do %>
-            <%= file_field_tag :file %>
-            <%= submit_tag "Import CSV" %>
-        <% end %>
+<div class="btn btn-custom" data-toggle="tooltip" title="Create a single user">
+    <%= link_to "Add User", new_user_registration_path %>
+</div>
+<br>
+<h5>Import Users</h5>
+    <%= form_tag import_users_path, multipart: true do %>
+        <%= file_field_tag :file %><br>
+        <%= submit_tag "Import CSV" %>
+    <% end %>

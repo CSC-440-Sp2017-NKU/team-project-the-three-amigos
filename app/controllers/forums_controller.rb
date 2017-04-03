@@ -35,7 +35,7 @@ class ForumsController < ApplicationController
         format.html { redirect_to @forum, notice: 'Forum was successfully created.' }
         format.json { render :show, status: :created, location: @forum }
       else
-        format.html { render :new }
+        format.html { redirect_to new_forum_path, notice: 'Forum topic cannot be blank.' }
         format.json { render json: @forum.errors, status: :unprocessable_entity }
       end
     end
