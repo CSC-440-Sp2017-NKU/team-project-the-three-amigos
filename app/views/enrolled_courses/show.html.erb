@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>User:</strong>
+  <%= @enrolled_course.user.name %>
+</p>
+
+<p>
+  <strong>Course:</strong>
+  <%= @enrolled_course.course.name %>
+</p>
+
+<%= link_to 'Edit', edit_enrolled_course_path(@enrolled_course) %> |
+<%= link_to 'Back', enrolled_courses_path %>

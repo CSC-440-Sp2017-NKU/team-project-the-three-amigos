@@ -1,24 +1,33 @@
 <p id="notice"><%= notice %></p>
 
+  <div style="background:var(--nku-gold) !important" class="jumbotron">
+    <div class="makeCenter">
+      <h1><%= @course.name %></h1>
+    </div>
+  </div>
+  
 <p>
-  <strong>Name:</strong>
-  <%= @course.name %>
+  <h3>Professor:
+    <%= @course.user.name %>
+  </h3>
 </p>
 
 <p>
-  <strong>Time:</strong>
-  <%= @course.time %>
+  <h3>Time:
+    <%= @course.time %>
+  </h3>
 </p>
 
 <p>
-  <strong>Section:</strong>
-  <%= @course.section %>
+  <h3>Section:
+    <%= @course.section %>
+  </h3>
 </p>
 
-<p>
-  <strong>User:</strong>
-  <%= @course.user_id %>
-</p>
+<h3>Enrolled students:</h3>
+  <% @course.users.each do |c| %>
+    <h4><%= c.name %></h4>
+  <% end %> 
 
 <%= link_to 'Edit', edit_course_path(@course) %> |
 <%= link_to 'Back', courses_path %> |

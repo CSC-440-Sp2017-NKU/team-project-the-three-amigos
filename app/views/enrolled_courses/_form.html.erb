@@ -1,0 +1,16 @@
+<%= simple_form_for(@enrolled_course) do |f| %>
+  <%= f.error_notification %>
+
+    <div class="forum-group">
+      <%= f.label :Student %>
+      <%= f.select :user_id, User.all.collect { |p| [ p.name, p.id ] }, {}, {class: "form-control"} %>
+    </div>
+    <div class="forum-group">
+      <%= f.label :course %>
+      <%= f.select :course_id, Course.all.collect { |p| [ p.name, p.id ] }, {}, {class: "form-control"} %>
+    </div>
+    <br>
+    <div class="form-group">
+      <%= f.submit "Register student", class: "btn btn-custom" %>
+    </div>
+<% end %>
