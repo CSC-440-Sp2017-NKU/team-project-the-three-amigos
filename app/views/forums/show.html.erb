@@ -11,13 +11,10 @@
     <% end %> 
 	</div>
 <% end %>
-  <h3 class="questions_title">
+  <h3>
     <%= @forum.questions.count %> Questions
   </h3>
-  
-  <div id="questions">
     <%= render :partial => @forum.questions %>
-  </div>
   <br>
   <%= simple_form_for [@forum, Question.new]  do |f| %>
       <div class="field">

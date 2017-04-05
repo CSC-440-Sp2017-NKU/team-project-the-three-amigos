@@ -1,68 +1,28 @@
 <div class="makeCenter">
-    <div class="container">       
-        <div class="row">
-            <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 col-xs-offset-0 col-sm-offset-0 col-md-offset-3 col-lg-offset-3 toppad" >
-                <div class="panel panel-info">
-                    <div class="panel-heading">
-                        <h3 class="panel-title"><%= @user.name %></h3>
-                    </div>
-                    <div class="panel-body">
-                        <div class="row">
-                            <div class="col-md-3 col-lg-3 " align="center"> <img alt="User Pic" src="/NKU_CMYK_D.gif" class="img-circle img-responsive"> </div>
-                            <div class=" col-md-9 col-lg-9 "> 
-                                <table class="table table-user-information">
-                                    <tbody>
-                                      <tr>
-                                        <td>User type</td>
-                                        <td>
-                                            <% if @user.administrator? %>
-                                                Administrator
-                                            <% elsif @user.faculty? %>
-                                                Faculty
-                                            <% else %>
-                                                Student
-                                            <% end %>
-                                        </td>
-                                      </tr>
-                                      <tr>
-                                        <td>Email</td>
-                                        <td><%= @user.email %></td>
-                                      </tr>
-                                      <tr>
-                                        <td>Creation date</td>
-                                        <td><%= @user.created_at %></td>
-                                      </tr>
-                                      <tr>
-                                        <td>Reputation</td>
-                                        <td><%= @user.reputation %></td>
-                                      </tr>
-                                      <tr>
-                                        <td>Course list</td>
-                                        <td> 
-                                            <% @user.courses.each do |c| %>
-                                              <%= c.name %>
-                                            <% end %>
-                                        </td>
-                                      </tr>
-                                        <td>Phone Number</td>
-                                        <td>123-4567-890(Landline)<br><br>555-4567-890(Mobile)
-                                        </td>
-                                    </tbody>
-                                </table>
-                            </div>
-                        </div>
-                    </div>
-                <div class="panel-footer clearfix">
-                    <span class="pull-right">
-                        <%= link_to edit_user_path(@user), class: "btn btn-sm btn-warning" do %>
-                            <i class="glyphicon glyphicon-edit"></i> Edit account
-                        <% end %>
-                        <%= link_to admin_destroy_user_path(@user), class: "btn btn-sm btn-danger", method: :delete, data: { confirm: "Are you sure?" } do %>
-                            <i class="glyphicon glyphicon-remove"></i> Destroy account
-                        <% end %>    
-                    </span>
-                </div>
-            </div>
+    <figure class="snip0057 gold">
+      <figcaption>
+        <h2><span><%= @user.name %></span></h2>
+        <p>
+            <%= @user.email %><br>
+            User reputation of <%= @user.reputation %><br>
+            Course list<br><% @user.courses.each do |c| %><%= c.name %><br><% end %>
+        </p>
+        <div class="icons"><%= link_to edit_user_path(@user), class: "btn btn-sm", title: "Edit user" do %>
+          <i class="glyphicon glyphicon-edit"></i>
+        <% end %>
+        <%= link_to admin_destroy_user_path(@user), class: "btn btn-sm", title: "Delete user", method: :delete, data: { confirm: "Are you sure you want to delete this forum?" } do %>
+          <i class="glyphicon glyphicon-trash"></i>
+        <% end %>   </div>
+      </figcaption>
+      <div class="image"><img <%=image_tag("NKU1.jpg")%> alt="NKU1"/></div>
+        <div class="position">
+            <% if @user.administrator? %>
+                Administrator
+            <% elsif @user.faculty? %>
+                Faculty
+            <% else %>
+                Student
+            <% end %>
         </div>
-    </div>
-</div>    
+    </figure>   
+</div>

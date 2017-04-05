@@ -41,10 +41,8 @@
 		<% flash.each do |name, msg| %>
 			<%= content_tag(:div, msg, class: "alert alert-info") %>
 		<% end %>
-
-			<div id="content" class="col-md-9 center-block">
+		<div id="content" class="col-md-9 center-block">
 				<%= yield %>
-			</div>
 		</div>
 	</div>
 </body>	
@@ -71,9 +69,10 @@
       </ul>
       <p>Copyright © NKUNet 2017</p>
     </div><!--/col-->
-  </div><!--/container-->
-  <ul class="nav pull-right scroll-top">
+    <ul class="nav pull-right scroll-top">
   <li><a href="#" title="Scroll to top"><i class="glyphicon glyphicon-chevron-up"></i></a></li>
+  </div><!--/container-->
+  
 </ul>
 </footer>
 
