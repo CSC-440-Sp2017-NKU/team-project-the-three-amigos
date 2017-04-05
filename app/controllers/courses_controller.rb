@@ -36,7 +36,7 @@ class CoursesController < ApplicationController
         format.html { redirect_to courses_path, notice: 'Course was successfully created.' }
         format.json { render :show, status: :created, location: @course }
       else
-        format.html { render :new }
+        format.html { redirect_to new_course_path, notice: 'All fields must be completed' }
         format.json { render json: @course.errors, status: :unprocessable_entity }
       end
     end

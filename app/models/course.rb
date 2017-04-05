@@ -1,4 +1,6 @@
 class Course < ActiveRecord::Base
+  validates :name, presence: true
+  validates :section, presence: true
   require 'csv'
   belongs_to :user
   # Association link between course and users

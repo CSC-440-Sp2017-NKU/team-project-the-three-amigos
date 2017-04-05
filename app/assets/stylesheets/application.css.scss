@@ -132,11 +132,17 @@ td{
 	background-color: var(--nku-gold);
   border-color: #f8af01;
   font-weight: 700;
-  a:hover {
-  color: white;
-	background-color: #de9e01;
-	border-color: #f8af01;
-  }
+  	a{
+  		color: black;
+			background-color: var(--nku-gold);
+		  border-color: #f8af01;
+		  font-weight: 700;
+  	}
+  	a:hover {
+		  color: white;
+			background-color: #de9e01;
+			border-color: #f8af01;
+  	}
 }
 
 .btn-custom:hover, .btn-custom:focus, .btn-custom:active{
