@@ -31,7 +31,7 @@ class EnrolledCoursesController < ApplicationController
         format.html { redirect_to courses_path, notice: 'Enrolled course was successfully created.' }
         format.json { render :show, status: :created, location: @enrolled_course }
       else
-        format.html { render :new }
+        format.html { redirect_to new_enrolled_course_path, notice: 'Both student and class should be selected.'  }
         format.json { render json: @enrolled_course.errors, status: :unprocessable_entity }
       end
     end

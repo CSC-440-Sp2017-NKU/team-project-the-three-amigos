@@ -39,6 +39,11 @@
     <%= f.label :user_id %>
     <%= f.text_field :user_id, :placeholder => "Enter user Id number", class: "form-control" %>
   </div>
+  
+  <div class="forum-group">
+    <%= f.label :Professor %>
+    <%= f.select :user_id, User.all.collect { |p| [ p.name, p.id ] }, {:include_blank => 'Select student'},  {class: "form-control"} %>
+  </div>
 
   <div class="form-group">
     <%= f.submit "Add Course", class: "btn btn-custom" %>
