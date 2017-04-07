@@ -25,10 +25,9 @@
     <div class="field">
       <%= f.text_area :body, :placeholder => "Enter answer", autofocus: true,  class: "form-control" %>
     </div>
-    <br>
-    <%= f.submit "Add Answer", class: "btn btn-custom" %>
+    <ul class="pager">
+      <%= f.submit "Add Answer", class: "btn btn-custom" %>
+      <li class="next"><%= link_to 'Back', forums_path %></li>
+    </ul>
 <% end %>
 
-<%#= link_to 'Edit', edit_question_path(@question) %>
-<br>
-<%= link_to 'Back', forum_url(@question.forum_id) %>

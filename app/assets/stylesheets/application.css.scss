@@ -165,3 +165,16 @@ td{
       top: 0;
       z-index: 9998;
 }
+
+.next a {
+    background-color: var(--nku-gold) !important;
+    color: black !important;
+    border-color: #f8af01;
+	font-weight: 700;
+}
+
+.next a:hover {
+		color: white !important;
+		background-color: #de9e01 !important;
+		border-color: #f8af01;
+  	}

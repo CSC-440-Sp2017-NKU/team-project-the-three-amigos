@@ -15,8 +15,10 @@
     <%= f.label :topic %><br>
     <%= f.text_field :topic, placeholder: "Enter forum topic", autofocus: true, class: "form-control" %>
   </div>
-  <br>
   <div class="form-group">
-    <%= f.submit "Add Forum", class: "btn btn-custom" %>
+      <ul class="pager">
+        <%= f.submit "Add Forum", class: "btn btn-custom" %>
+        <li class="next"><%= link_to 'Back', forums_path %></li>
+      </ul>
   </div>
 <% end %>
