@@ -38,6 +38,9 @@ gem 'font-awesome-rails'
 # Date picker for courses
 gem 'momentjs-rails', '>= 2.9.0'
 gem 'bootstrap3-datetimepicker-rails', '~> 4.17.47'
+# Seach student, professor and course (dynamic search)
+gem 'select2-rails'
+gem 'jquery-turbolinks'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 

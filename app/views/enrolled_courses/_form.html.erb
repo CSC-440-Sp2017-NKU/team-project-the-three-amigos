@@ -3,11 +3,11 @@
 
     <div class="forum-group">
       <%= f.label :Student %>
-      <%= f.select :user_id, User.all.collect { |p| [ p.name, p.id ] }, {:include_blank => 'Select student'},  {class: "form-control"} %>
+      <%= f.select :user_id, User.all.collect { |p| [ p.name, p.id ] }, {:include_blank => 'Select student'},  {class: "select2 form-control"} %>
     </div>
     <div class="forum-group">
       <%= f.label :course %>
-      <%= f.select :course_id, Course.all.collect { |p| [ p.name, p.id ] }, {:include_blank => 'Select course'}, {class: "form-control"} %>
+      <%= f.select :course_id, Course.all.collect { |p| [ p.name, p.id ] }, {:include_blank => 'Select course'}, {class: "select2 form-control"} %>
     </div>
     <br>
     <div class="form-group">

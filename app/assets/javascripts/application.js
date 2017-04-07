@@ -11,10 +11,20 @@
 // about supported directives.
 //
 //= require jquery
+//= require jquery.turbolinks
+//= require jquery.easing
+//= require jquery_ujs
 //= require moment
 //= require bootstrap-datetimepicker
 //= require bootstrap-sprockets
-//= require jquery.easing
-//= require jquery_ujs
 //= require turbolinks
 //= require_tree .
+//= require select2
+
+$(document).on('turbolinks:load', function() {
+    $(".select2").select2();
+});
+
+$('#customize-controls').on('click' , function() { 
+ $('select[data-customize-setting-link]').select2("close"); 
+} );
