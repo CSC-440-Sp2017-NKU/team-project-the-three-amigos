@@ -41,6 +41,9 @@ gem 'bootstrap3-datetimepicker-rails', '~> 4.17.47'
 # Seach student, professor and course (dynamic search)
 gem 'select2-rails'
 gem 'jquery-turbolinks'
+# Paginate
+gem 'will_paginate', '~> 3.1.0'
+gem 'will_paginate-bootstrap'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
