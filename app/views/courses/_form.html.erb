@@ -36,17 +36,15 @@
   </div>
   
   <div class="form-group">
-    <%= f.label :user_id %>
-    <%= f.text_field :user_id, :placeholder => "Enter user Id number", class: "form-control" %>
-  </div>
-  
-  <div class="form-group">
     <%= f.label :Professor %>
-    <%= f.select :user_id, User.all.collect { |p| [ p.name, p.id ] }, {:include_blank => 'Select professor'},  {class: "select2 form-control"} %>
+    <%=  f.select :user_id, options_for_select(User.select(:name, :id).where(:faculty => true).map{|u| [u.name, u.id]}), {:include_blank => 'Select professor'},  {class: "select2 form-control"} %>
   </div>
 
-  <div class="form-group">
-    <%= f.submit "Add Course", class: "btn btn-custom" %>
+    <div class="form-group">
+      <ul class="pager">
+        <%= f.submit "Add Course", class: "btn btn-custom" %>
+        <li class="next"><%= link_to 'Back', forums_path %></li>
+      </ul>
   </div>
   
 <% end %>
