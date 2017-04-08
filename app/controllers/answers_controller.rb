@@ -68,14 +68,20 @@ class AnswersController < ApplicationController
     @answer = Answer.find(params[:id])
     @answer.upvote_by current_user
     @answer.user.increase_reputation
-    redirect_to :back
+    respond_to do |format|
+        format.html {redirect_to :back }
+        format.json { render json: { count: @answer.get_upvotes.size } }
+    end
   end
   
   def downvote
     @answer = Answer.find(params[:id])
     @answer.downvote_by current_user
     @answer.user.decrease_reputation
-    redirect_to :back
+    respond_to do |format|
+        format.html {redirect_to :back }
+        format.json { render json: { count: @answer.get_downvotes.size } }
+    end
   end
 
   private

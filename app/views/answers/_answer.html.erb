@@ -16,12 +16,12 @@
                             <i class="glyphicon glyphicon-edit"></i>
                     <% end %>
 				<% end %>
-				<%= link_to like_answer_path(answer), method: :put, class: "btn btn-default btn-sm" do %>
+				<%= link_to like_answer_path(answer), class:'vote', method: :put, remote: true, class: "btn btn-default btn-sm" do %>
 			      <span class="glyphicon glyphicon-chevron-up"></span>
 			      Upvote
 			      <%= answer.get_upvotes.size %>
 			    <% end %>
-			    <%= link_to dislike_answer_path(answer), method: :put, class: "btn btn-default btn-sm" do %>
+			    <%= link_to dislike_answer_path(answer), class:'vote', method: :put, remote: true, class: "btn btn-default btn-sm" do %>
 			      <span class="glyphicon glyphicon-chevron-down">
 			      Downvote
 			      <%= answer.get_downvotes.size %>
