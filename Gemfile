@@ -44,6 +44,8 @@ gem 'jquery-turbolinks'
 # Paginate
 gem 'will_paginate', '~> 3.1.0'
 gem 'will_paginate-bootstrap'
+# Turn off auto complete for Form
+gem "autocomplete-off"
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
