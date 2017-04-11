@@ -2,9 +2,9 @@ class User < ActiveRecord::Base
   require 'csv'
   acts_as_voter
   # Include default devise modules. Others available are:
-  # :confirmable, :lockable, :timeoutable and :omniauthable
+  # :confirmable, :lockable and :omniauthable
   devise :database_authenticatable, :registerable,
-         :recoverable, :rememberable, :trackable, :validatable
+         :recoverable, :rememberable, :trackable, :validatable, :timeoutable
 
   # Association link between users and forums       
   has_many :forums
@@ -24,5 +24,9 @@ class User < ActiveRecord::Base
     CSV.foreach(file.path, headers: true) do |row|
       User.create! row.to_hash
     end
+  end
+  
+  def timeout_in
+    return 1.days
   end
 end

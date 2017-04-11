@@ -1,5 +1,6 @@
 class EnrolledCoursesController < ApplicationController
   before_action :set_enrolled_course, only: [:show, :edit, :update, :destroy]
+  before_filter :authenticate_user!
 
   # GET /enrolled_courses
   # GET /enrolled_courses.json
