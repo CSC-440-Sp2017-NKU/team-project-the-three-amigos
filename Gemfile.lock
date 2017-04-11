@@ -116,6 +116,7 @@ GEM
     nokogiri (1.7.0.1)
       mini_portile2 (~> 2.1.0)
     orm_adapter (0.5.0)
+    pg (0.20.0)
     rack (1.6.5)
     rack-test (0.6.3)
       rack (>= 1.0)
@@ -218,6 +219,7 @@ DEPENDENCIES
   jquery-turbolinks
   less-rails-bootstrap
   momentjs-rails (>= 2.9.0)
+  pg
   rails (= 4.2.5)
   recaptcha
   sass-rails (~> 5.0)
