@@ -177,4 +177,27 @@ td{
 		color: white !important;
 		background-color: #de9e01 !important;
 		border-color: #f8af01;
-  	}
+}
+
+.wide {
+  width:100%;
+  height:200px;
+  background-image:url('NKU4.jpg');
+  background-size:cover;
+}
+
+.wide img {
+  width:100%;
+}
+
+.course-title {
+  color:#fff;
+  font-weight:800;
+  font-size:36pt;
+  padding:25px;
+  text-align:left;
+}
+
+.padding-left {
+	padding-left:70px;
+}

@@ -1,39 +1,36 @@
-  <div style="background:var(--nku-gold) !important" class="jumbotron">
-    <div class="makeCenter">
-      <h1><%= @course.name %></h1>
-    </div>
-  </div>
+<div class="wide">
+  <div class="col-xs-5 course-title"><%= @course.name %></div>
+</div>
   
-<p>
+<div class="container-fluid bg-1 text-center">
   <h3>Professor:
-    <%= @course.user.name %>
-  </h3>
-</p>
-
-<p>
+    <%= @course.user.name %></h3>
+</div>  
+<div class="container-fluid bg-1 text-center">
   <h3>Time:
-    <%= @course.time %>
-  </h3>
-</p>
-
-<p>
+    <%= @course.time %></h3>
+</div>  
+<div class="container-fluid bg-1 text-center">
   <h3>Section:
-    <%= @course.section %>
-  </h3>
-</p>
+    <%= @course.section %></h3>
+</div>  
 
-<h3>Enrolled students:</h3>
-  <% @course.users.each do |c| %>
-    <h4><%= c.name %></h4>
-  <% end %> 
+<div class="container-fluid bg-3 text-center"> 
+  <h3>Enrolled students</h3>
+    <div class="container-fluid bg-3 text-center">
+    <% @course.users.each do |c| %>
+      <h4><%= c.name %></h4>
+    <% end %>
+    </div>
+</div>
 <br>
-<span>
-  <%= link_to edit_course_path(@course), class: "btn btn-custom" do %>
-      <i class="glyphicon glyphicon-edit"></i> Edit account
-  <% end %>
-  <%= link_to @course, class: "btn btn-custom", title: "Delete course", method: :delete, data: { confirm: "Are you sure you want to delete this course?" } do %>
-      <i class="glyphicon glyphicon-remove"></i> Destroy course
-  <% end %> 
-</span>
-<br><br>
-<%= link_to 'Back', courses_path %>
+  <ul class="pager padding-left">
+    <%= link_to edit_course_path(@course), class: "btn btn-custom" do %>
+        <i class="glyphicon glyphicon-edit"></i> Edit account
+    <% end %>
+    <%= link_to @course, class: "btn btn-custom", title: "Delete course", method: :delete, data: { confirm: "Are you sure you want to delete this course?" } do %>
+        <i class="glyphicon glyphicon-remove"></i> Destroy course
+    <% end %> 
+    
+    <li class="next"><%= link_to 'Back', courses_path %></li>
+  </ul>
