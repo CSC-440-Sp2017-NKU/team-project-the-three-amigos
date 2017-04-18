@@ -1,6 +1,6 @@
 class RegistrationsController < Devise::RegistrationsController
   # Used to override already logged on error from devise when adding a user to the system
-  prepend_before_action :check_captcha, only: [:create] # Change this to be any actions you want to protect.
+  prepend_before_action :check_captcha, only: [:sign_in] # Change this to be any actions you want to protect.
   before_action :authenticate_user!, :redirect_unless_admin,  only: [:new, :create]
   skip_before_action :require_no_authentication
 

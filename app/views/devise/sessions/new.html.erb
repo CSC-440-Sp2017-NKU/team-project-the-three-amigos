@@ -1,7 +1,7 @@
 <h2>Sign in</h2>
 
 <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-<%#= flash[:recaptcha_error] %>
+<%= flash[:recaptcha_error] %>
 
   <div class="form-group">
   	<%= f.label :email %>
@@ -19,7 +19,7 @@
 		</label>
   </div>
 
-  <%#= recaptcha_tags %><br>
+  <%= recaptcha_tags %><br>
 
   <div class="form-group">
   	<%= f.submit "Sign In", class: "btn btn-custom" %>
