@@ -8,7 +8,7 @@
         <p>
             <%= @user.email %><br>
             User reputation of <%= @user.reputation %><br>
-            Course list<br><% @user.courses.each do |c| %><%= c.name %><br><% end %>
+            Course list<br><% @user.courses.each do |c| %><%= link_to c.name, course_path(c) %><br><% end %>
         </p>
         <br>
         <div class="icons"></div>

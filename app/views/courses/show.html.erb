@@ -19,7 +19,7 @@
   <h3>Enrolled students</h3>
     <div class="container-fluid bg-3 text-center">
     <% @course.users.each do |c| %>
-      <h4><%= c.name %></h4>
+      <h4><%= link_to c.name, user_path(c) %></h4>
     <% end %>
     </div>
 </div>
