@@ -44,9 +44,11 @@
         </div>
     </div>
   </div>
+<% end %>
+<%= will_paginate @courses, render: BootstrapPagination::Rails, :class => "digg_pagination center" %>
+<br><br>
 <% if current_user.faculty? %>
     <div class="btn btn-custom" data-toggle="tooltip" title="Add a single student to a course">
         <%= link_to "Register Student", new_enrolled_course_path %>
     </div>
-<% end %>
 <% end %>

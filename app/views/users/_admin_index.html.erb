@@ -61,7 +61,9 @@
             </div>
         </div>
     </div>
-</div>    
+</div>   
+<%= will_paginate @users, render: BootstrapPagination::Rails, :class => "digg_pagination center" %>
+<br><br>
 <div class="btn btn-custom" data-toggle="tooltip" title="Create a single user">
     <%= link_to "Add User", new_user_registration_path %>
 </div>
