@@ -2,6 +2,7 @@
 
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
   <%= devise_error_messages! %>
+  <%= flash[:recaptcha_error] %>
 
     <div class="form-group">
       <%= f.label :name %>
@@ -27,6 +28,8 @@
 		<div><%= f.check_box :administrator, {}, true %> <%= f.label :administrator, "Administrator" %> </div>
     <div><%= f.check_box :faculty, {}, true %> <%= f.label :faculty, "Faculty" %> </div>
 		</div>
+		
+		<%= recaptcha_tags %><br>
 
 	  <div class="form-group">
 	  	<%= f.submit "Add user", class: "btn btn-custom" %>
