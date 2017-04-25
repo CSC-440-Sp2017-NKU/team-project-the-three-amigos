@@ -4,7 +4,9 @@
   
 <div class="container-fluid bg-1 text-center">
   <h3>Professor:
-    <%= @course.user.name %></h3>
+     <% if @course.user_id %>
+        <%= @course.user.name %>
+     <% end %></h3>
 </div>  
 <div class="container-fluid bg-1 text-center">
   <h3>Time:
@@ -25,7 +27,7 @@
 </div>
 <br>
   <ul class="pager padding-left">
-    <% if current_user.administrator? %>
+    <% if current_user.administrator? -%>
       <%= link_to edit_course_path(@course), class: "btn btn-custom" do %>
           <i class="glyphicon glyphicon-edit"></i> Edit account
       <% end %>
