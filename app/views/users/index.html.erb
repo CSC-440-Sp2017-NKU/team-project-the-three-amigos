@@ -53,7 +53,7 @@
                     </div>
                 </div>
             </div>
+            <%= will_paginate @users, render: BootstrapPagination::Rails, :class => "digg_pagination center" %>
         <% end %>
     </div>
 </div>
-<%= will_paginate @users, render: BootstrapPagination::Rails, :class => "digg_pagination center" %>
