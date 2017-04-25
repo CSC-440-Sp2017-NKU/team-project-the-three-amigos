@@ -1,0 +1,18 @@
+<%= form_for :q, method: :get do |f| %>
+  <p>
+    <%= text_field_tag :q, params[:q], :class => "search_text", :placeholder => "Search" %>
+    <%= button_tag(type: "submit", class: "btn btn-custom") do %>
+         <i class="glyphicon glyphicon-search"></i>
+    <% end %>
+  </p>
+<% end %>
+<h2>Search Results</h2>
+<ul>
+    <% @records.each do |record| %>
+        <li>
+            <h3>
+                <%= link_to "#{record.body}", question_path(record) %>
+            </h3>
+        </li>
+    <% end %>
+</ul>

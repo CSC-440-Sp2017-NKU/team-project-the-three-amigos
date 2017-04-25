@@ -25,6 +25,8 @@ Rails.application.routes.draw do
   match 'users/:id' => 'users#destroy', :via => :delete, :as => :admin_destroy_user
   resources :users, only: [:show, :index, :edit, :update]
   
+  get 'search', to: 'search#search'
+  
   # Defined root_url is the forum controller
   root to: "forums#index"
   

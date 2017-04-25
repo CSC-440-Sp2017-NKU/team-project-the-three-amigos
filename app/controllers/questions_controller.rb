@@ -6,6 +6,11 @@ class QuestionsController < ApplicationController
   # GET /questions.json
   def index
     @questions = Question.all
+    if params[:q]
+      @questions = Question.search(params[:q]).order("created_at DESC")
+    else
+      @questions = Question.all.order("created_at DESC")
+    end
   end
 
   # GET /questions/1

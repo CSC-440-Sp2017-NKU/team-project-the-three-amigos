@@ -9,6 +9,7 @@
 <body>
 	<header class="navbar navbar-default navbar-fixed-top">
     <div class="navbar-inner">
+      
       <div class="container">
         <div id="logo" class="navbar-brand">
         <%= link_to image_tag("nkunet.png"), root_path %></div>
@@ -27,10 +28,20 @@
                     <li><%= link_to 'Sign out', destroy_user_session_path, :method => :delete %></li>
                   </ul>
               </li>
+              <li>
+                 <%= link_to search_path do %>
+                      <i class="glyphicon glyphicon-search"></i>
+                 <% end %>
+              </li>
 						</ul>
 					<% else -%>
 						<ul class="nav navbar-nav navbar-right">
 						  <li><%= link_to 'Sign in', new_user_session_path %></li>
+						  <li>
+                 <%= link_to search_path do %>
+                      <i class="glyphicon glyphicon-search"></i>
+                 <% end %>
+              </li>
 						</ul>
 					<% end -%>
         </nav>
