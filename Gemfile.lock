@@ -71,6 +71,7 @@ GEM
       warden (~> 1.2.3)
     erubis (2.7.0)
     execjs (2.7.0)
+    filterrific (2.1.2)
     font-awesome-rails (4.7.0.1)
       railties (>= 3.2, < 5.1)
     font-awesome-sass (4.7.0)
@@ -219,6 +220,7 @@ DEPENDENCIES
   byebug
   coffee-rails (~> 4.1.0)
   devise (~> 4.2.0)
+  filterrific
   font-awesome-rails
   font-awesome-sass (~> 4.7.0)
   jbuilder (~> 2.0)

@@ -7,7 +7,12 @@ class UsersController < ApplicationController
     end
     
     def index
-        @users = User.paginate(:page => params[:page], :per_page => 5) 
+       # @users = User.paginate(:page => params[:page], :per_page => 5)
+        @filterrific = initialize_filterrific(
+            User,
+            params[:filterrific]
+        )
+        @users = @filterrific.find.page(params[:page]).paginate(:page => params[:page], :per_page => 5) 
     end
     
     def import

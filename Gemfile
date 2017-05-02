@@ -59,6 +59,8 @@ gem "recaptcha", require: "recaptcha/rails"
 #for search
 gem 'ransack'
 
+gem 'filterrific'
+
 # Use Unicorn as the app server
 # gem 'unicorn'
 

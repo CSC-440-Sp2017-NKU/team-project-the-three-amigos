@@ -5,7 +5,11 @@ class CoursesController < ApplicationController
   # GET /courses
   # GET /courses.json
   def index
-    @courses = Course.paginate(:page => params[:page], :per_page => 10)
+    @filterrific = initialize_filterrific(
+          Course,
+          params[:filterrific]
+      )
+      @courses = @filterrific.find.page(params[:page]).paginate(:page => params[:page], :per_page => 10) 
   end
   
   def import

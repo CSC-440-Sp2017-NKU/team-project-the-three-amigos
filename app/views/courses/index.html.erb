@@ -1,3 +1,16 @@
+<div>
+   <div class="container" style="padding-bottom: 10px">
+            <%= form_for_filterrific @filterrific do |f| %>
+                  <div>
+                    Search
+                    <%# give the search field the 'filterrific-periodically-observed' class for live updates %>
+                    <%= f.text_field(
+                      :search_query,
+                      class: 'filterrific-periodically-observed'
+                    ) %>
+                  </div>
+            <% end %>
+    </div>
   <div class="makeCenter">
     <div class="container">
         <div class="row">
@@ -83,3 +96,4 @@
         <%= submit_tag("Import CSV") %>
 <% end %>
 <% end %>
+</div>
